@@ -1,0 +1,42 @@
+<%- include("partials/header.ejs") %>
+
+
+    <div class="container">
+        <div>
+            <form action="/todaywork" , method="POST">
+                <input type="text" , name="newWork">
+                <input type="submit" , value="ok">
+            </form>
+
+        </div>
+        <div>
+            <% for(let i=0;i<newListItems.length;i++) { %>
+                <ol id="chb" class="ch">
+                    <input type="checkbox" id="myCheckbox<%= i %>" value="src">
+                    <li class="child">
+                        <%= (i + 1) + '. ' + newListItems[i] %>
+                    </li> 
+                </ol>
+                <% } %>
+        </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $("[id^='myCheckbox']").on("change", (function () {  // checking the checkbox    with  Jquery on method and "change"
+            const checkbox = $(this);
+            const label = checkbox.siblings(".child"); // taking child elements of checkbox with siblings() method
+            if (checkbox.prop("checked")) { 
+                // if the checkbox is checked , add class called "completed-task" which can be line through the items.
+                label.addClass("completed ");
+            } else {
+                label.removeClass("completed "); // if not, remove class
+            }
+        }));
+
+    </script>
+
+
+
+    <%- include("partials/footer.ejs") %>

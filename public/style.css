@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.nav-bar{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    height: 100dvh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+.child{
+    display: inline-block;
+}
+
+.today{
+    text-decoration: none;
+}
